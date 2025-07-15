@@ -1,4 +1,4 @@
-package org.example;
+package org.example.person;
 
 import java.util.Comparator;
 import java.util.List;
@@ -47,6 +47,14 @@ public class PersonStreams {
                 .filter(person -> person.getName().startsWith(prefix)
                         && person.getAge() > age)
                 .toList();
+    }
+
+    public Map<String,Map<String, List<Person>>> task29(List<Person> people){
+        return people.stream()
+                .collect(Collectors.groupingBy(
+                        person -> person.getAge() > 18 ? "Adult" : "Child",
+                        Collectors.groupingBy(person -> person.getName().substring(0, 1))
+                ));
     }
 
 }

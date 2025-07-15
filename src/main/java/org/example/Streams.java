@@ -123,4 +123,21 @@ public class Streams {
                 .reduce(1, (a, b) -> a * b);
     }
 
+    public Integer task28(List<Integer> numbers){
+        return numbers.stream()
+                .filter(number -> number % 2 == 0)
+                .map(number -> number * number)
+                .mapToInt(Integer::intValue)
+                .sum();
+    }
+
+    public String task30(List<String> strings){
+        return strings.stream()
+                .filter(str -> str.length() > 3)
+                .map(String::toUpperCase)
+                .sorted()
+                .collect(Collectors.joining(","));
+
+    }
+
 }

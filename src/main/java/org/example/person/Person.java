@@ -1,4 +1,4 @@
-package org.example;
+package org.example.person;
 
 import lombok.Getter;
 import lombok.Setter;
