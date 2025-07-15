@@ -1,10 +1,13 @@
 package org.example;
 
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Streams {
 
@@ -83,4 +86,41 @@ public class Streams {
                 .map(s -> s.isEmpty() ? "" : s.substring(0, 1))
                 .collect(Collectors.toList());
     }
+
+    public int task21(List<Integer> numbers){
+        return numbers.stream()
+                .mapToInt(number -> number * number)
+                .sum();
+    }
+
+    public Optional<Integer> task22(List<Integer> numbers) {
+        return numbers.stream()
+                .reduce((a, b) -> a * b);
+    }
+
+    public Map<String, Integer> task23(List<Integer> numbers) {
+        return numbers.stream()
+                .collect(Collectors.teeing(
+                        Collectors.minBy(Integer::compareTo),
+                        Collectors.maxBy(Integer::compareTo),
+                        (minOpt, maxOpt) -> {
+                            Map<String, Integer> result = new HashMap<>();
+                            result.put("min", minOpt.orElse(null));
+                            result.put("max", maxOpt.orElse(null));
+                            return result;
+                        }
+                ));
+    }
+
+    public IntSummaryStatistics task24(List<Integer> numbers){
+        return numbers.stream()
+                .mapToInt(Integer::intValue)
+                .summaryStatistics();
+    }
+
+    public int task25(int number){
+        return IntStream.rangeClosed(1, number)
+                .reduce(1, (a, b) -> a * b);
+    }
+
 }

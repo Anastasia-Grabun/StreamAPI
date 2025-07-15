@@ -132,6 +132,21 @@ public class Main {
 
         //task20
         System.out.println(streams.task20(words));
+
+        //task21
+        System.out.println(streams.task21(numbers13));
+
+        //task22
+        System.out.println(streams.task22(numbers13));
+
+        //task23
+        System.out.println(streams.task23(numbers13));
+
+        //task24
+        System.out.println(streams.task24(numbers13));
+
+        //task25
+        System.out.println(streams.task25(5));
     }
 
 }
