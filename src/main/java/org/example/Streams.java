@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -42,11 +43,6 @@ public class Streams {
                 .collect(Collectors.toList());
     }
 
-/*
-    12. Уникальные элементы
-    Удалите дубликаты из списка строк и отсортируйте результат.
-*/
-
     public List<String> task12(List<String> words){
         return words.stream()
                 .distinct()
@@ -60,4 +56,31 @@ public class Streams {
                 .collect(Collectors.partitioningBy(number -> number % 2 == 0));
     }
 
+    public String task16(List<String> strings){
+        return strings.stream()
+                .collect(Collectors.joining(","));
+    }
+
+    public Optional<String> task17(List<String> strings){
+        return strings.stream()
+                .max(Comparator.comparingInt(String::length));
+    }
+
+    public long task18(List<String> strings){
+        return strings.stream()
+                .mapToInt(String::length)
+                .sum();
+    }
+
+    public List<String> task19(List<String> strings){
+        return strings.stream()
+                .filter(string -> string.length() > 5)
+                .collect(Collectors.toList());
+    }
+
+    public List<String> task20(List<String> strings){
+        return strings.stream()
+                .map(s -> s.isEmpty() ? "" : s.substring(0, 1))
+                .collect(Collectors.toList());
+    }
 }

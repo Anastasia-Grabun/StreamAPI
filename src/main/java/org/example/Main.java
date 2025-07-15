@@ -118,7 +118,20 @@ public class Main {
         //task15
         System.out.println(personStreams.task15(people, "A", 19));
 
+        //task16
+        System.out.println(streams.task16(words));
 
+        //task17
+        System.out.println(streams.task17(words));
+
+        //task18
+        System.out.println(streams.task18(words));
+
+        //task19
+        System.out.println(streams.task19(words));
+
+        //task20
+        System.out.println(streams.task20(words));
     }
 
 }
