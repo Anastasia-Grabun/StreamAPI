@@ -37,4 +37,16 @@ public class PersonStreams {
                 .orElse(0);
     }
 
+    public Map<String, Integer> task13(List<Person> people){
+        return people.stream()
+                .collect(Collectors.toMap(Person::getName, Person::getAge));
+    }
+
+    public List<Person> task15(List<Person> people, String prefix, int age){
+        return people.stream()
+                .filter(person -> person.getName().startsWith(prefix)
+                        && person.getAge() > age)
+                .toList();
+    }
+
 }

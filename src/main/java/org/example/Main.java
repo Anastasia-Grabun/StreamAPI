@@ -87,6 +87,38 @@ public class Main {
 
         //task7
         System.out.println(personStreams.task10(people));
+
+        //task11
+        List<List<Integer>> numbers = new ArrayList<>();
+        List<Integer> list1 = Arrays.asList(1, 2, 3);
+        List<Integer> list2 = Arrays.asList(4, 5);
+        List<Integer> list3 = Arrays.asList(6, 7, 8, 9);
+        numbers.add(list1);
+        numbers.add(list2);
+        numbers.add(list3);
+
+        System.out.println(streams.task11(numbers));
+
+        //task12
+        List<String> words = Arrays.asList(
+                "apple", "banana", "orange", "apple",
+                "grape", "banana", "pear", "kiwi",
+                "mango", "grape", "apple", "lemon"
+        );
+
+        System.out.println(streams.task12(words));
+
+        //task13
+        System.out.println(personStreams.task13(people));
+
+        //task14
+        List<Integer> numbers13 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        System.out.println(streams.task14(numbers13));
+
+        //task15
+        System.out.println(personStreams.task15(people, "A", 19));
+
+
     }
 
 }
